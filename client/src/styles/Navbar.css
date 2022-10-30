@@ -1,0 +1,67 @@
+.nav-item {
+    font-size: larger;
+    text-decoration: none;
+    font-weight: 700;
+    color: rgb(2, 2, 33);
+}
+
+.logoimg {
+    padding-bottom: 10px;
+    padding-right: 7px;
+}
+
+.navbar-brand {
+    font-size: xx-large;
+    color: rgb(20, 4, 84);
+    font-weight: bolder;
+    font-style: italic;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.profile_btn {
+    background-color: white;
+    border: 2px solid #000000;
+    color: #000000;
+    padding: 8px 15px;
+    text-align: center;
+    text-decoration: double;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    border-radius: 25px;
+}
+
+.dropitem {
+    background-color: white;
+    color: #000000;
+    padding: 5px 5px;
+    text-align: center;
+    text-decoration: double;
+    display: inline-block;
+    font-size: 15px;
+}
+
+.dropitem:hover {
+    background-color: #000000;
+    color: white;
+    text-decoration: none;
+}
+
+.btnlogin {
+    background-color: white;
+    border: 2px solid #000000;
+    color: #000000;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: double;
+    display: inline-block;
+    font-size: 16px;
+    margin: 1px;
+    border-radius: 25px;
+}
+
+.btnlogin:hover {
+    background-color: #000000;
+    color: white;
+    box-shadow: 0 10px 12px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}

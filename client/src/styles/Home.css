@@ -1,0 +1,11 @@
+.background {
+    background-image: url("../components/images/homeimg.jpg");
+    height:640px;
+    width: auto;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size:cover;
+    display: flex;
+    justify-content: center;
+  
+  }
