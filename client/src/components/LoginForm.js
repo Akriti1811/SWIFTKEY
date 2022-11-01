@@ -6,7 +6,7 @@ const LoginForm = () => (
     <div className="loginform">
       <form className="login-form">
         <h3>Login</h3>
-        <label for="email">Email</label>
+        <label >Email</label>
         <input
           type="text"
           placeholder="Enter Email"
@@ -15,7 +15,7 @@ const LoginForm = () => (
           //    onChange={(e) => setEmail(e.target.value)}
         />
 
-        <label for="password">Password</label>
+        <label >Password</label>
         <input
           type="password"
           placeholder="Password"

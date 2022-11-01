@@ -31,14 +31,14 @@ export default function Navbar(props) {
               alt=""
               width="50"
               height="50"
-              class="logoimg d-inline-block align-text-top"
+              className="logoimg d-inline-block align-text-top"
             />
             Typing  Master
           </Link>
 
           <ul className="nav  justify-content-end">
             <Link to="/login" className="anchors">
-              <button type="button " class="btnlogin">
+              <button type="button " className="btnlogin">
                 Login
               </button>
             </Link>

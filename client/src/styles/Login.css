@@ -76,11 +76,11 @@
 
 .newaccount {
   margin-top: 40px;
-  text-align: right;
+  text-align:center;
 }
 
 .signupbutton {
-  color: rgb(4, 4, 41);
-  font-weight: 400;
+  color: rgb(15, 15, 220);
+  font-weight: 600;
   padding: 5px;
 }
