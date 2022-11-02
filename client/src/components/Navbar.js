@@ -1,26 +1,26 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "../styles/Navbar.css";
-// import { useDispatch } from "react-redux";
-// import { useSelector } from "react-redux";
-// import { useHistory } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
 
-import logo from "./images/tm_logo.jpg";
+import logo from "./images/logo.png";
 
 export default function Navbar(props) {
-//   const { user } = useSelector((state) => ({ ...state }));
+  const { auth } = useSelector((state) => ({ ...state }));
 
-//   const history = useHistory();
+  let navigate = useNavigate();
 
-//   const dispatch = useDispatch();
-//   function logout() {
-//     dispatch({
-//       type: "LOGOUT",
-//       payload: null,
-//     });
-//     window.localStorage.removeItem("auth");
-//     history.push("/login");
-//   }
+  const dispatch = useDispatch();
+  function logout() {
+    dispatch({
+      type: "LOGOUT",
+      payload: null,
+    });
+    window.localStorage.removeItem("auth");
+    navigate("/login");
+  }
   return (
     <>
       <nav className="navbar navbar-expand-lg bg-light">
@@ -29,45 +29,37 @@ export default function Navbar(props) {
             <img
               src={logo}
               alt=""
-              width="50"
-              height="50"
+              width="240"
+              height="65"
               className="logoimg d-inline-block align-text-top"
             />
-            Typing  Master
           </Link>
 
           <ul className="nav  justify-content-end">
-            <Link to="/login" className="anchors">
-              <button type="button " className="btnlogin">
-                Login
-              </button>
-            </Link>
-            {/* {user && user.token && ( */}
-              {/* <div class="dropdown">
-                <button
-                  class="profile_btn dropdown-toggle"
-                  type="button"
-                  id="dropdownMenuButton1"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                >
-                  {user.user.name}
+
+            {auth === null && (
+              <Link to="/login" className="anchors">
+                <button type="button " className="btnlogin">
+                  Login
                 </button>
-                <ul
-                  class="dropdown-menu dropdown-menu-lg-end"
-                  aria-labelledby="dropdownMenuButton1"
-                >
-                  <Link to="/">
-                    <li className="dropdown-item dropitem">Dashboard</li>
-                  </Link>
-                  <li className="dropdown-item dropitem" onClick={logout}>
-                    LogOut
-                  </li>
-                </ul>
-              </div> */}
-            {/* )} */}
+              </Link>
+            )}
+
+            {/* {auth !== null && (
+              <Link to="/" className="anchors">
+                <button type="button " className="btnlogin">
+                  Dashboard
+                </button>
+              </Link>
+            )} */}
+
+            {auth !== null && (
+              <button type="button " className="btnlogin" onClick={logout}>
+                Logout
+              </button>
+            )}
+
           </ul>
-          
         </div>
       </nav>
     </>

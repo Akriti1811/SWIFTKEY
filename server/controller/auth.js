@@ -1,16 +1,5 @@
 const User = require("../models/user");
-
-exports.login = (req, res) => {
-  const { email, password } = req.credential;
-
-  User.countDocuments({ email, password }, function (err, count) {
-    if (count > 0) {
-      res.status(200).json({ err: "Login Successfully" });
-    } else {
-      res.status(401).json({ err: "Wrong Credentials" });
-    }
-  });
-};
+const jwt = require('jsonwebtoken');
 
 exports.signup = async (req, res) => {
   console.log(req.body);
@@ -30,5 +19,32 @@ exports.signup = async (req, res) => {
   } catch (err) {
     console.log("CREATE USER FAILED", err);
     return res.status(400).send("Error. Try Again");
+  }
+};
+
+exports.login = async (req, res) => {
+  const { email, password } = req.body;
+  try {
+    let user = await User.findOne({ email }).exec();
+    if (!user) res.status(400).send("User Not Found");
+    user.comparePassword(password, (err, match) => {
+      console.log("COMPARE PASSWORD IN LOGIN ERROR", err);
+      if (!match || err) return res.status(400).send("Wrong Password");
+      // Generate token
+      let token = jwt.sign({_id: user._id}, process.env.JWT_SECRET,{
+        expiresIn:"9d",
+      });
+      res.json({ token, user: {
+        _id: user._id,
+        name: user.name,
+        email: user.email,
+        createdAt: user.createdAt,
+        updatedAt: user.epdatedAt,
+
+      } });
+    });
+  } catch {
+    console.log("LOGIN ERROR", err);
+    res.status(400).send("SIGNIN FAILED");
   }
 };

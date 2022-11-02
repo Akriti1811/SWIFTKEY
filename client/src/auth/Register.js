@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { toast } from "react-toastify";
 import RegisterForm from "../components/RegisterForm";
-import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { register } from "../actions/auth";
 
 const Register = () => {
   let navigate = useNavigate();
@@ -13,7 +13,7 @@ const Register = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post("http://localhost:4000/api/signup", {
+      const res = await register({
         name,
         email,
         password,
@@ -24,10 +24,11 @@ const Register = () => {
       navigate("/");
     } catch (error) {
       console.log(error);
+      if(error.response.status === 400)
       toast.error(error.response.data);
     }
   };
-
+console.log( );
   return (
     <>
       <RegisterForm

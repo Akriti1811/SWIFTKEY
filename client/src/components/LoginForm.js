@@ -1,29 +1,38 @@
 import { Link } from "react-router-dom";
 import "../styles/Login.css";
 
-const LoginForm = () => (
+const LoginForm = ({
+  handleSubmit,
+  email,
+  setEmail,
+  password,
+  setPassword,
+}) => (
   <>
     <div className="loginform">
       <form className="login-form">
         <h3>Login</h3>
-        <label >Email</label>
+        <label>Email</label>
         <input
           type="text"
           placeholder="Enter Email"
           id="email"
-          //    value={email}
-          //    onChange={(e) => setEmail(e.target.value)}
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
         />
 
-        <label >Password</label>
+        <label>Password</label>
         <input
           type="password"
           placeholder="Password"
           id="password"
-          //    value={password}
-          //    onChange={(e) => setPassword(e.target.value)}
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
         />
-        <button className="loginbutton">Submit</button>
+        <button disabled={!email || !password}
+        className="loginbutton" onClick={handleSubmit}>
+          Submit
+        </button>
         <br />
         <div className="newaccount">
           {" "}
