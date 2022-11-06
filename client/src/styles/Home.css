@@ -1,11 +1,20 @@
-.background {
-    background-image: url("../components/images/homeimg.jpg");
-    height:640px;
-    width: auto;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size:cover;
-    display: flex;
-    justify-content: center;
-  
-  }
+.header{
+  padding-top: 80px;
+  color:antiquewhite;
+  font-size:50px;
+  font-weight: bolder;
+  font-style: italic;
+}
+
+.App {
+  background-color: rgb(65, 6, 62);
+}
+
+.time {
+  color: antiquewhite;
+}
+
+.resulthead{
+  color: antiquewhite;
+  font-size: 30px;
+}
