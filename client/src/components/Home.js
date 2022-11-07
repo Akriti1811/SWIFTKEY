@@ -3,7 +3,7 @@ import { useState, useEffect, useRef } from "react";
 import randomWords from "random-words";
 
 const NUMB_OF_WORDS = 200;
-const SECONDS = 60;
+const SECONDS = 10;
 
 const Home = () => {
   const [words, setWords] = useState([]);
@@ -30,7 +30,9 @@ const Home = () => {
   function generateWords() {
     return new Array(NUMB_OF_WORDS).fill(null).map(() => randomWords());
   }
-
+  function selectTime() {
+    
+  }
   function start() {
     if (status === "finished") {
       setWords(generateWords());
@@ -115,9 +117,11 @@ const Home = () => {
           TEST YOUR TYPING SKILLS
         </div>
       )}
-        <div className="section">
-          <div className="is-size-1 has-text-centered">
-            <h2 className="time">Time : {countDown}</h2>
+        <div className="timesection">
+          <div className=" has-text-centered">
+            <h2 className="is-size-1 time">Time : {countDown}</h2>
+            
+          {/* <button onclick={selectTime}>Change Time</button> */}
           </div>
         </div>
         <div className="control is-expanded section">
@@ -171,7 +175,11 @@ const Home = () => {
           <div className="section">
             <div className="columns">
               <div className="column has-text-centered">
-                <p className="resulthead">Words per minute:</p>
+                <p className="resulthead">Gross words per minute:</p>
+                <p className="has-text-primary is-size-1">{correct+incorrect}</p>
+              </div>
+              <div className="column has-text-centered">
+                <p className="resulthead">Net words per minute:</p>
                 <p className="has-text-primary is-size-1">{correct}</p>
               </div>
               <div className="column has-text-centered">

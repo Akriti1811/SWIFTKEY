@@ -1,32 +1,17 @@
-/* .dashboard{
+.dashboard{
     background-image: url("../components/images/keyboard.jpg");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-  } */
+    padding-left: 100px;
+    padding-right: 100px;
+    padding-bottom: 350px;
+  }
 .dash-header {
     font-size: 40px;
     font-weight: bolder;
-    color: rgb(0, 0, 0);
+    color:antiquewhite;
     padding: 40px;
 }
 
-.dashboard-card {
-    width: 300px;
-    text-align: center;
-    padding-bottom: 20px;
-    margin: 50px 100px;
-}
-
-.dashboard-card:hover {
-    box-shadow: 10px 10px 12px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19)
-}
-
-.dash-card-header {
-    justify-content: center;
-    font-size: large;
-    color: black;
-    font-weight: bold;
-    background-color: rgb(166, 168, 171);
-}

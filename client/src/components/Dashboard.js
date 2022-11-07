@@ -5,13 +5,42 @@ export default function Dashboard() {
     <>
       <div className="dashboard">
         <p className="dash-header text-center">Dashboard</p>
-        <div class="card dashboard-card">
-          <div class="card-header dash-card-header">Test 1</div>
-          <div class="card-body">
-            <p class="card-text">Words per Minute: 30</p>
-            <p class="card-text">Accuracy: 90%</p>
-            <p class="card-text">Date: 6/11/2022</p>
-          </div>
+        
+        <div>
+          <table className="table dashtable table-striped ">
+            <thead>
+              <tr>
+                <th scope="col"></th>
+                <th scope="col">Date</th>
+                <th scope="col">Gross Words Per Minute</th>
+                <th scope="col">Net Words Per Minute</th>
+                <th scope="col">Accuracy</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">1</th>
+                <td>7/11/2022</td>
+                <td>35</td>
+                <td>32</td>
+                <td>90%</td>
+              </tr>
+              <tr>
+                <th scope="row">2</th>
+                <td>7/11/2022</td>
+                <td>35</td>
+                <td>32</td>
+                <td>90%</td>
+              </tr>
+              <tr>
+                <th scope="row">3</th>
+                <td>7/11/2022</td>
+                <td>35</td>
+                <td>32</td>
+                <td>90%</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </div>
     </>

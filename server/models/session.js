@@ -2,7 +2,16 @@ const mongoose = require("mongoose");
 
 const sessionSchema = new mongoose.Schema(
   {
-    words_per_minute: {
+    user: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'User'
+    },
+    net: {
+      type: String,
+      trim: true,
+      required: true,
+    },
+    gross: {
       type: String,
       trim: true,
       required: true,

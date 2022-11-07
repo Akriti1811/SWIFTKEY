@@ -12,8 +12,12 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  padding-bottom: 100px;
 }
-
+.timesection{
+  padding-top: 50px;
+  padding-bottom: 20px;
+}
 .time {
   color: antiquewhite;
   font-size:50px;

@@ -22,12 +22,10 @@ const userSchema = new mongoose.Schema(
       min: 6,
       max: 64,
     },
-    sessions: [
-      {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: "Session",
-      },
-    ],
+    sessions: [{
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'Session'
+  }]
   },
   { timestamps: true }
 );
@@ -46,15 +44,15 @@ userSchema.pre("save", function (next) {
   } else return next();
 });
 
-userSchema.methods.comparePassword = function (password, next) {
-  bcrypt.compare(password, this.password, function (err, match) {
-    if (err) {
+userSchema.methods.comparePassword = function (password,next){
+  bcrypt.compare(password,this.password, function(err,match) {
+    if(err){
       console.log("COMPARE PASSWORD ERROR", err);
       return next(err, false);
     }
     console.log("MATCH PASSWORD", match);
     return next(null, match);
   });
-};
+}
 
 module.exports = mongoose.model("User", userSchema);

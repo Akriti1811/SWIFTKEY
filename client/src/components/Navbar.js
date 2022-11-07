@@ -46,7 +46,7 @@ export default function Navbar(props) {
             )}
 
             {auth !== null && (
-              <Link to="/" className="anchors">
+              <Link to="/dashboard" className="anchors">
                 <button type="button " className="btnlogin">
                   Dashboard
                 </button>
