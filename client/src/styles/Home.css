@@ -1,4 +1,4 @@
-.header{
+.home-header{
   padding-top: 80px;
   color:antiquewhite;
   font-size:50px;
@@ -7,11 +7,17 @@
 }
 
 .App {
-  background-color: rgb(65, 6, 62);
+  background-image: url("../components/images/keyboard.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 .time {
   color: antiquewhite;
+  font-size:50px;
+  font-weight: bolder;
 }
 
 .resulthead{

@@ -45,13 +45,13 @@ export default function Navbar(props) {
               </Link>
             )}
 
-            {/* {auth !== null && (
+            {auth !== null && (
               <Link to="/" className="anchors">
                 <button type="button " className="btnlogin">
                   Dashboard
                 </button>
               </Link>
-            )} */}
+            )}
 
             {auth !== null && (
               <button type="button " className="btnlogin" onClick={logout}>

@@ -3,7 +3,7 @@ import { useState, useEffect, useRef } from "react";
 import randomWords from "random-words";
 
 const NUMB_OF_WORDS = 200;
-const SECONDS = 10;
+const SECONDS = 60;
 
 const Home = () => {
   const [words, setWords] = useState([]);
@@ -111,7 +111,7 @@ const Home = () => {
     <>
       <div className="App">
       {status === "waiting" && (
-        <div className="header section has-text-centered">
+        <div className="home-header section has-text-centered">
           TEST YOUR TYPING SKILLS
         </div>
       )}
@@ -122,6 +122,7 @@ const Home = () => {
         </div>
         <div className="control is-expanded section">
           <input
+          placeholder="Type Here"
             ref={textInput}
             disabled={status !== "started"}
             type="text"
@@ -131,9 +132,9 @@ const Home = () => {
             onChange={(e) => setCurrInput(e.target.value)}
           />
         </div>
-        <div className="section">
+        <div className="section  has-text-centered">
           <button
-            className="button is-link is-light is-fullwidth "
+            className="button is-link is-light "
             onClick={start}
           >
             Start
