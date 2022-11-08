@@ -136,6 +136,7 @@ const Home = () => {
             onChange={(e) => setCurrInput(e.target.value)}
           />
         </div>
+        
         <div className="section  has-text-centered">
           <button
             className="button is-link is-light "
