@@ -21,6 +21,7 @@ const Login = () => {
         if(res.data) {
             console.log("save user res");
             window.localStorage.setItem("auth", JSON.stringify(res.data));
+            window.localStorage.setItem("token",res.token);
             dispatch({
               type: "LOGGED_IN_USER",
               payload: res.data,

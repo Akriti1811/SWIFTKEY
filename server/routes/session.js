@@ -6,6 +6,6 @@ const {createSession, getSessions} = require("../controller/session");
 
 router.post("/create",protect, createSession);
 
-router.get("/get", protect, getSessions);
+router.post("/get", protect, getSessions);
 
 module.exports = router; 

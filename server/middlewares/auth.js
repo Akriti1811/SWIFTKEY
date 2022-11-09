@@ -21,7 +21,7 @@ exports.protect = async (req, res, next) => {
   // { _id: '6367d40fe61d4dc6c32608e6', iat: 1667807294, exp: 1668584894 }
   // Token Verification 
   const decoded = await promisify(jwt.verify)(token, process.env.JWT_SECRET);
-  console.log(decoded);
+  // console.log(decoded);
 
   // Check if user still exists
   const freshUser = await User.findById(decoded._id);

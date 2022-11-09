@@ -1,41 +1,26 @@
 import "../styles/Dashboard.css";
-import { createSession } from "../actions/session";
+import { getSession } from "../actions/session";
+import { useState, useEffect } from "react";
 
 export default function Dashboard() {
-    const sessions = [
-      {
-        sno: "1",
-        gross: "40",
-        net: "30",
-        accuracy: "80%",
-      },
-      {
-        sno: "2",
-        gross: "45",
-        net: "36",
-        accuracy: "86%",
-      },
-      {
-        sno: "3",
-        gross: "20",
-        net: "10",
-        accuracy: "50%",
-      },
-    ];
 
-//   const sessionadd = async (e) => {
-//     const res = await createSession;
-//     const data = await response.json();
-//     this.setState({ totalReactPackages: data.total });
-//   };
+  const [sessions, setSessions] = useState([]);
+  useEffect(() => {
+    const token = JSON.parse(localStorage.getItem("auth")).token;
+    // console.log(token);
+    (async () => {
+      const res = await getSession(token);
+      setSessions(res.data.sessions);
+    })();
+  }, []);
 
-  const tableRows = sessions.map((element) => {
+  const tableRows = sessions.map((element,index) => {
     return (
-      <tr>
-        <th scope="row">{element.sno}</th>
+      <tr key={index}>
+        <th scope="row">{index+1}</th>
         <td>{element.gross}</td>
         <td>{element.net}</td>
-        <td>{element.accuracy}</td>
+        <td>{element.accuracy}%</td>
       </tr>
     );
   });
@@ -46,7 +31,7 @@ export default function Dashboard() {
         <table className="table dashtable table-striped ">
           <thead>
             <tr>
-              <th scope="col">Tests</th>
+              <th scope="col"></th>
               <th scope="col">Gross Words Per Minute</th>
               <th scope="col">Net Words Per Minute</th>
               <th scope="col">Accuracy</th>

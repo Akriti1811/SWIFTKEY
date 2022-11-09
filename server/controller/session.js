@@ -2,7 +2,7 @@ const User = require("../models/user");
 const Session = require("../models/session");
 
 exports.createSession = async (req, res) => {
-    console.log(req.user);
+    console.log(req.body);
     const id = req.user._id;
     const {gross, net, accuracy} = req.body;
     if(!gross || !net || !accuracy)
@@ -31,7 +31,7 @@ exports.getSessions = async (req, res) => {
   
     return res.status(200).json({
       status: 'success',
-      data: user.sessions,
+      sessions: user.sessions,
       message: 'All sessions fetched successfully',
     });
   };
